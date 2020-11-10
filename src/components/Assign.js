@@ -280,9 +280,9 @@ class AssignForm extends React.Component {
         message: ('Year of Birth: ' + this.state.year +
                   '\nGender: ' + cmn.capitalise(this.state.gender) +
                   '\nLanguages: ' + cmn.getLanguagesDisplay(this.state.languages) +
-                  '\nLevel of Need: ' + this.state.need +
-                  '\nRights Status: ' + this.state.rights +
-                  '\nHousing Status: ' + this.state.housing),
+                  '\nLevel of Need: ' + cmn.getDescFromType(this.state.need, cmn.levelOfNeedOpts) +
+                  '\nRights Status: ' + cmn.getDescFromType(this.state.rights, cmn.rightsStatusOpts) +
+                  '\nHousing Status: ' + cmn.getDescFromType(this.state.housing, cmn.housingStatusOpts)),
         buttons: [
           {
             label: 'Confirm',

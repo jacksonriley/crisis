@@ -152,14 +152,14 @@ export class AddForm extends React.Component {
   }
 
   getExperienceDisplay(experience) {
-    var experience_str = "";
+    var experience_str = "\n";
 
     for (let i = 0; i < experience.length; i++) {
       const obj = experience[i];
-      experience_str += obj.desc + " (" + obj.type + "), ";
+      experience_str += " * " + obj.desc + "\n";
     }
 
-    return experience_str.slice(0, -2);
+    return experience_str.slice(0, -1);
   }
 
   handleSubmit(event) {
@@ -173,10 +173,10 @@ export class AddForm extends React.Component {
                   '\nBirth year: ' + this.state.birthYear +
                   '\nGender: ' + cmn.capitalise(this.state.gender) +
                   '\nAvailability: ' + (this.state.available ? 'Available' : 'Not available') +
-                  '\nLanguages: ' + cmn.getLanguagesDisplay(this.state.languages) +
-                  '\nExperience in Level of Need: ' + this.getExperienceDisplay(this.state.needLevels) +
-                  '\nExperience in Rights Status: ' + this.getExperienceDisplay(this.state.rightsLevels) +
-                  '\nExperience in Housing Status: ' + this.getExperienceDisplay(this.state.housingLevels)),
+                  '\n\nLanguages: ' + cmn.getLanguagesDisplay(this.state.languages) +
+                  '\n\nExperience in Level of Need: ' + this.getExperienceDisplay(this.state.needLevels) +
+                  '\n\nExperience in Rights Status: ' + this.getExperienceDisplay(this.state.rightsLevels) +
+                  '\n\nExperience in Housing Status: ' + this.getExperienceDisplay(this.state.housingLevels)),
         buttons: [
           {
             label: 'Confirm',
